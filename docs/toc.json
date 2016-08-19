@@ -96,6 +96,14 @@
       }]
     },
     {
+      "title": "Speech",
+      "type": "speech/speechclient",
+      "nav": [{
+        "title": "Operation",
+        "type": "speech/operation"
+      }]
+    },
+    {
       "title": "Storage",
       "type": "storage/storageclient",
       "nav": [{

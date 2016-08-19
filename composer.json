@@ -39,6 +39,9 @@
     "phpdocumentor/phpdocumentor": "2.8.*",
     "symfony/console": "2.*"
   },
+  "suggest": {
+    "james-heinrich/getid3": "Allows the Google Cloud Speech client to determine sample rate and encoding of audio inputs"
+  },
   "autoload": {
     "psr-4": {
       "Google\\Cloud\\": "src"
