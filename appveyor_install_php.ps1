@@ -7,6 +7,8 @@ $path = "C:\tools\php\$file"
 try {
     $client.DownloadFile($url, $path)
 } catch {
+    echo $archiveUrl
+	echo $path
 	$client.DownloadFile($archiveUrl, $path)
 }
 
