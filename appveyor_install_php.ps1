@@ -2,11 +2,12 @@ $file = "php-$env:PHP_VERSION.zip"
 $url = "http://windows.php.net/downloads/releases/$file"
 $archiveUrl = "http://windows.php.net/downloads/releases/archives/$file"
 $client = New-Object NET.WebClient
+$path = "C:\tools\php\$file"
 
 try {
-    $client.DownloadFile($url, "C:\tools\php\$file")
+    $client.DownloadFile($url, $path)
 } catch {
-	$client.DownloadFile($archiveUrl, "C:\tools\php\$file")
+	$client.DownloadFile($archiveUrl, $path)
 }
 
-7z x C:\tools\php\$file -oc:\tools\php
+7z x $path -oc:\tools\php
