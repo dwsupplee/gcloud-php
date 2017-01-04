@@ -1,7 +1,11 @@
+$file = "php-$env:PHP_VERSION.zip"
+$projectPath = "C:\projects\google-cloud"
+$url = "http://windows.php.net/downloads/releases/$file"
+$archiveUrl = "http://windows.php.net/downloads/releases/archives/$file"
+$client = New-Object NET.WebClient
+
 try {
-	curl -fsS -o php-$env:PHP_VERSION.zip http://windows.php.net/downloads/releases/php-$env:PHP_VERSION.zip
-    appveyor DownloadFile
+    $client.DownloadFile($url, "$projectPath\$file")
 } catch {
-	curl -fsS -o php-$env:PHP_VERSION.zip http://windows.php.net/downloads/releases/archives/php-$env:PHP_VERSION.zip
+	$client.DownloadFile($archiveUrl, "$projectPath\$file")
 }
-7z x php-$env:PHP_VERSION.zip -oc:\tools\php
