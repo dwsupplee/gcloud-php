@@ -5,6 +5,7 @@ $projectPath = "C:\projects\google-cloud"
 $client = New-Object NET.WebClient
 
 try {
+	echo $url
     $client.DownloadFile($url, "$projectPath\$file")
 } catch {
 	$client.DownloadFile($archiveUrl, "$projectPath\$file")
