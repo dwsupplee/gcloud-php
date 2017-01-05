@@ -5,11 +5,9 @@ $client = New-Object NET.WebClient
 $path = "C:\tools\php\$file"
 
 try {
-    $client.DownloadFile($url, $path)
+    appveyor DownloadFile $url
 } catch {
-    echo $archiveUrl
-	echo $path
-	$client.DownloadFile($archiveUrl, $path)
+	appveyor DownloadFile $archiveUrl
 }
 
-7z x $path -oc:\tools\php
+7z x $file -oc:\tools\php
