@@ -11,4 +11,4 @@ appveyor DownloadFile http://windows.php.net/downloads/releases/archives/php-$en
 	$client.DownloadFile($archiveUrl, "C:\projects\google-cloud\$file")
 }
 
-7z x $path -oc:\tools\php
+7z x $file -oc:\tools\php
