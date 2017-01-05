@@ -4,14 +4,11 @@ $archiveUrl = "http://windows.php.net/downloads/releases/archives/$file"
 $client = New-Object NET.WebClient
 $path = "C:\tools\php\$file"
 
-echo $PSScriptRoot
-
 try {
-    echo 'attempting $url...'
-    appveyor DownloadFile $url
+appveyor DownloadFile http://windows.php.net/downloads/releases/archives/php-$env:PHP_VERSION.zip
+    $client.DownloadFile($url, "C:\projects\google-cloud")
 } catch {
-	echo 'attempting $archiveUrl...'
-	appveyor DownloadFile $archiveUrl
+	$client.DownloadFile($archiveUrl, "C:\projects\google-cloud")
 }
 
-7z x $file -oc:\tools\php
+7z x $path -oc:\tools\php
