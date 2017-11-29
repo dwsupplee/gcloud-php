@@ -20,10 +20,8 @@ namespace Google\Cloud\Core;
 use Google\Auth\ApplicationDefaultCredentials;
 use Google\Auth\CredentialsLoader;
 use Google\Auth\Credentials\GCECredentials;
-use Google\Auth\HttpHandler\HttpHandlerFactory;
 use Google\Cloud\Core\Compute\Metadata;
 use Google\Cloud\Core\Exception\GoogleException;
-use GuzzleHttp\Psr7;
 
 /**
  * Provides functionality common to each service client.
