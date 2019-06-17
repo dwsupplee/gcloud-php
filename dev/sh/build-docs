@@ -3,11 +3,7 @@
 set -ev
 
 function buildDocs () {
-  if [ -z "$TRAVIS_TAG" ]; then
-    ./dev/google-cloud docs
-  else
-    ./dev/google-cloud docs -r
-  fi
+  gsutil
 }
 
 
