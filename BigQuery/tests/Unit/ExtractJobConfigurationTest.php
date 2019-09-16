@@ -83,6 +83,10 @@ class ExtractJobConfigurationTest extends TestCase
             ->sourceTable($sourceTable->reveal())
             ->useAvroLogicalTypes($extract['useAvroLogicalTypes']);
 
+        $this->assertInstanceOf(
+            ExtractJobConfiguration::class,
+            $this->config
+        );
         $this->assertEquals(
             $this->expectedConfig,
             $this->config->toArray()

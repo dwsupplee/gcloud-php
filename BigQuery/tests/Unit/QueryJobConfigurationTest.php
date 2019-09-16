@@ -130,7 +130,14 @@ class QueryJobConfigurationTest extends TestCase
             ->userDefinedFunctionResources($query['userDefinedFunctionResources'])
             ->writeDisposition($query['writeDisposition']);
 
-        $this->assertEquals($this->expectedConfig, $this->config->toArray());
+        $this->assertInstanceOf(
+            QueryJobConfiguration::class,
+            $this->config
+        );
+        $this->assertEquals(
+            $this->expectedConfig,
+            $this->config->toArray()
+        );
     }
 
     /**

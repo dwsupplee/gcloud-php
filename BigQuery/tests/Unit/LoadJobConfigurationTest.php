@@ -121,6 +121,10 @@ class LoadJobConfigurationTest extends TestCase
             ->writeDisposition($load['writeDisposition'])
             ->useAvroLogicalTypes($load['useAvroLogicalTypes']);
 
+        $this->assertInstanceOf(
+            LoadJobConfiguration::class,
+            $this->config
+        );
         $this->assertEquals(
             $this->expectedConfig + ['data' => $data],
             $this->config->toArray()

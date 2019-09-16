@@ -84,6 +84,10 @@ class CopyJobConfigurationTest extends TestCase
             ->sourceTable($sourceTable->reveal())
             ->writeDisposition($copy['writeDisposition']);
 
+        $this->assertInstanceOf(
+            CopyJobConfiguration::class,
+            $this->config
+        );
         $this->assertEquals(
             $this->expectedConfig,
             $this->config->toArray()
